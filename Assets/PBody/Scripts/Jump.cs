@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    private Rigidbody2D playerRb;
     public float jumpForce;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        playerRb = GetComponent<Rigidbody2D>();
        
     }
 
@@ -20,7 +20,7 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }
